@@ -59,7 +59,7 @@
             <a href="index.html">
               <img
               alt="Veda PDF Logo"
-              src="/images/pdf.png"
+              src="/chatwithpdfweb/img/pdf.png"
               class="navbar8-image1"
             />
           </a>
@@ -116,7 +116,7 @@
                 <div class="navbar8-top">
                   <a href="index.html"> <img
                     alt="Veda PDF Logo"
-                    src="/images/pdf.png"
+                    src="/chatwithpdfweb/img/pdf.png"
                     class="navbar8-logo"
                   /></a>
                   <div data-thq="thq-close-menu" class="navbar8-close-menu">
@@ -148,44 +148,110 @@
         </header>
       </navbar8-wrapper>
     </div>
-    
-    <div class="container my-4 " style=" background-color: var(--dl-color-theme-neutral-light);color: white;">
-        <h2>Contact Us </h2>
-        
-        <form>
-         <div class="form-group">
-           <label for="exampleFormControlInput1">Email address</label>
-           <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-         </div>
-         <div class="form-group">
-           <label for="exampleFormControlSelect1">Select Your Query</label>
-           <select class="form-control" id="exampleFormControlSelect1">
-             <option>Web</option>
-             <option>Technology</option>
-             <option>Payment</option>
-             <option>Other</option>
-           </select>
-         </div>
-         <div class="form-group row">
-             <div class="col-sm-2">Are you a Member  ?</div>
-             <div class="col-sm-10">
-               <div class="form-check">
-                 <input class="form-check-input" type="checkbox" id="gridCheck1">
-                 <label class="form-check-label" for="gridCheck1">
-                   Yes
-                 </label>
-               </div>
-               
-               
-             </div>
-           </div>
-         <div class="form-group">
-           <label for="exampleFormControlTextarea1">Elaborate Your Concern</label>
-           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-         </div>
-         <button class="btn btn-primary" data-toggle="modal" data-target="#SubmitModal" >Submit</button>
-       </form>
-      </div>
+    <style>
+      /* Custom popup style */
+      .popup {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 8px;
+          box-shadow: 0 0 20px rgba(0,0,0,0.4);
+          z-index: 1000;
+          width: 400px;
+          max-width: 90%;
+          text-align: center;
+          border-top: 5px solid rgb(244, 3, 3);
+      }
+      
+      .overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.6);
+          z-index: 999;
+      }
+      
+      .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 22px;
+          color: #999;
+      }
+      
+      .close-btn:hover {
+          color: #333;
+      }
+      
+      .popup-title {
+          color: rgb(244, 3, 3);
+          margin-bottom: 20px;
+          font-weight: bold;
+          border-bottom: 1px solid #eee;
+          padding-bottom: 10px;
+      }
+      
+      .popup-message {
+          color: black;
+          margin-bottom: 8px;
+          font-size: 16px;
+      }
+      
+      .popup-icon {
+          font-size: 50px;
+          color: #28a745;
+          margin-bottom: 20px;
+      }
+  </style>
+    <div class="container my-4">
+      <h2>Contact Us</h2>
+      <form id="contactForm" method="post" action="./php/contact.php">
+          <div class="form-group">
+              <label for="exampleFormControlInput1">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required name="email">
+          </div>
+          <div class="form-group">
+              <label for="exampleFormControlSelect1">Select Your Query</label>
+              <select class="form-control" id="query" name="query" required>
+                  <option value="">-- Select --</option>
+                  <option>Web</option>
+                  <option>Technology</option>
+                  <option>Payment</option>
+                  <option>Other</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="exampleFormControlTextarea1">Elaborate Your Concern</label>
+              <textarea class="form-control" id="concern" rows="3" required name="concern"></textarea>
+          </div>
+          <div class="form-group">
+              <input type="checkbox" id="member" name="member">
+              <label for="member">Are you a Member?</label>
+          </div>
+          <input type="submit" value="Submit" class="btn btn-primary">
+      </form>
+  </div>
+
+  <!-- Custom popup -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="successPopup">
+      <span class="close-btn" id="closePopup">×</span>
+      <div class="popup-icon">✓</div>
+      <h5 class="popup-title">Message From Veda PDF</h5>
+      <p class="popup-message">Thank you For Contacting Veda PDF.</p>
+      <p class="popup-message">You will be hearing from us Shortly.</p>
+  </div>
+
+ 
 
       <footer4-wrapper class="footer4-wrapper">
         <!-- Footer4 component -->
@@ -222,7 +288,7 @@
 </div>
 
 <!-- SubmitModal -->
-<div class="modal fade" id="SubmitModal" tabindex="-1" role="dialog" aria-labelledby="SubmitModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="SubmitModal" tabindex="-1" role="dialog" aria-labelledby="SubmitModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -240,7 +306,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
  
 <!-- Optional JavaScript -->
@@ -248,13 +314,54 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+ <!-- jQuery (required for AJAX) -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+ <script>
+     $(document).ready(function() {
+         // Submit form using AJAX
+         $("#contactForm").submit(function(e) {
+             e.preventDefault(); // Prevent default form submission
+             
+             // Get form data
+             var formData = $(this).serialize();
+             
+             // Send AJAX request
+             $.ajax({
+                 type: "POST",
+                 url: "./php/contact.php",
+                 data: formData,
+                 success: function(response) {
+                     if (response.includes("Data inserted successfully")) {
+                         // Show success popup
+                         $("#overlay").fadeIn();
+                         $("#successPopup").fadeIn();
+                         
+                         // Reset form
+                         $("#contactForm")[0].reset();
+                     } else {
+                         alert("Error: " + response);
+                     }
+                 },
+                 error: function(xhr, status, error) {
+                     alert("An error occurred: " + error);
+                 }
+             });
+         });
+         
+         // Close popup when clicking the close button or overlay
+         $("#closePopup, #overlay").click(function() {
+             $("#overlay").fadeOut();
+             $("#successPopup").fadeOut();
+         });
+     });
+ </script>
 <!-- I think Bootstrap is not loaded properly.
 Relying on Bootstrap's data attributes [ data-toggle="modal" and data-target="#SubmitModal"]is not making this Model Work [to automatically trigger the modal].
 So I manually gave call.
 [We are bypassing Bootstrap's automatic modal triggering system.
 It directly calls the modal's 'show' method using jQuery, which Bootstrap provides.]  -->
-<script>
+<!-- <script>
   $(document).ready(function() {
     $('.btn-primary').on('click', function(e) {
       e.preventDefault();
@@ -262,7 +369,7 @@ It directly calls the modal's 'show' method using jQuery, which Bootstrap provid
       $('#SubmitModal').modal('show');
     });
   });
-  </script>
+  </script> -->
 
 </body>
 </html>
