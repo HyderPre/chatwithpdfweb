@@ -65,7 +65,7 @@
               <a href="index.html">
                 <img
                 alt="Veda PDF Logo"
-                src="/chatwithpdfweb/img/pdf.png"
+                src="img/pdf.png"
                 class="navbar8-image1"
               />
             </a>
@@ -145,7 +145,7 @@
                   <div class="navbar8-top">
                     <a href="index.html"> <img
                       alt="Veda PDF Logo"
-                      src="/chatwithpdfweb/img/pdf.png"
+                      src="img/pdf.png"
                       class="navbar8-logo"
                     /></a>
                     <div data-thq="thq-close-menu" class="navbar8-close-menu">
@@ -470,7 +470,7 @@
         </div>
     </features25-wrapper>
      
-    <script>
+    <!-- <script>
         let currentIndex = 0;
         const images = document.querySelectorAll('.features24-image-container img');
         const changeInterval = 3000; // Time between each slide change in milliseconds
@@ -497,7 +497,7 @@
         .features24-image-container img {
             display: none;
         }
-    </style>
+    </style> -->
       <cta26-wrapper class="cta26-wrapper">
         <!--CTA26 component-->
         <div class="thq-section-padding">
@@ -622,16 +622,7 @@
               >
                 <span class="thq-body-small">Monthly</span>
               </button>
-              <!-- <button
-                class="pricing14-button11 thq-button-outline thq-button-animated"
-              >
-                <span class="thq-body-small">Monthly</span>
-              </button>
-              <button
-                class="pricing14-button12 thq-button-animated thq-button-filled"
-              >
-                <span class="thq-body-small">Yearly</span>
-              </button> -->
+          
               <button id="yearly-btn"
                 class="pricing14-button13 thq-button-outline thq-button-animated"
               >
@@ -927,20 +918,7 @@
                         </fragment>
                       </span>
                     </div>
-                    <!-- <div class="pricing14-list-item20">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment169">
-                          <span class="home-text173 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div> -->
+                
                     <div class="pricing14-list-item21">
                       <svg viewBox="0 0 1024 1024" class="thq-icon-small">
                         <path
@@ -1639,130 +1617,7 @@
           </div>
         </div>
       </testimonial17-wrapper>
-      <style>
-        .faq-container {
-          max-width: 1000px;
-          margin: 50px auto;
-          padding: 20px;
-          background-color: #0e1117ff; /* Same as index.html */
-          background-color: #ffff; /* Same as index.html */
-          border-radius: 8px;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          text-align: center;
-        }
-      
-        /* FAQ Title */
-        .faq-container h2 {
-          font-size: 26px;
-          color: #1E40AF; /* Matches Navbar & Buttons */
-          margin-bottom: 20px;
-        }
-      
-        /* FAQ Item */
-        .faq-item {
-          margin-bottom: 10px;
-          border-radius: 5px;
-          transition: all 0.3s ease-in-out;
-        }
-      
-        /* Question Styling */
-        .faq-item h3 {
-          font-size: 18px;
-          font-weight: 600;
-          margin: 0;
-          padding: 12px;
-          background: #2563EB; /* Matches index.html buttons */
-          color: white;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: all 0.3s ease-in-out;
-        }
-      
-        /* Hover Effect for Questions */
-        .faq-item h3:hover {
-          background: #1E40AF; /* Slightly darker for effect */
-        }
-      
-        /* Answer Styling */
-        .faq-item p {
-          max-height: 0;
-          overflow: hidden;
-          opacity: 0;
-          transform: translateY(-5px);
-          transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-          padding: 0 12px;
-          background: #F1F5F9; /* Light Gray background for contrast */
-          border-left: 4px solid #2563EB;
-          border-radius: 5px;
-          margin-top: 5px;
-          color: black;
-        }
-      
-        /* Show Answer When Active */
-        .faq-item.active p {
-          max-height: 500px; /* Large enough to fit content */
-          opacity: 1;
-          transform: translateY(0);
-          padding: 12px;
-        }
-      
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-          .faq-container {
-            width: 90%;
-            padding: 15px;
-          }
-        }
-      </style>
-
-    <!-- FAQs Later  -->
-      
-      <!-- <div id="faqs-section" class="faq-container">
-        <h2>Frequently Asked Questions (FAQs)</h2>
-        <div class="faq-item">
-          <h3>What is Veda PDF?</h3>
-          <p>Veda PDF is a chatbot that allows users to upload PDF documents and interact with the content by asking questions and chatting with the bot.</p>
-        </div>
-        <div class="faq-item">
-          <h3>How do I upload a PDF?</h3>
-          <p>To upload a PDF, go to the upload section of the chatbot interface and select the PDF file you want to upload from your device.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can I ask questions about any PDF?</h3>
-          <p>Yes, you can ask questions about the content of any PDF you upload, and the chatbot will provide answers based on the information in the document.</p>
-        </div>
-         Add more FAQ items as needed 
-      </div> --> 
-      
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const faqItems = document.querySelectorAll('.faq-item');
-      
-          faqItems.forEach(item => {
-            const question = item.querySelector('h3');
-            const answer = item.querySelector('p');
-      
-            question.addEventListener('click', () => {
-              // Close all other FAQ items smoothly
-              faqItems.forEach(faq => {
-                if (faq !== item && faq.classList.contains('active')) {
-                  faq.classList.remove('active');
-                  faq.querySelector('p').style.maxHeight = "0";
-                }
-              });
-      
-              // Toggle the clicked FAQ item
-              item.classList.toggle('active');
-      
-              if (item.classList.contains('active')) {
-                answer.style.maxHeight = answer.scrollHeight + "px"; // Expand smoothly
-              } else {
-                answer.style.maxHeight = "0"; // Collapse smoothly
-              }
-            });
-          });
-        });
-      </script>
+     
         <footer4-wrapper class="footer4-wrapper">
           <!-- Footer4 component -->
           <footer class="footer4-footer7 thq-section-padding">
@@ -1774,7 +1629,7 @@
                 <div class="footer4-links">
                   <a href="index.html#about-section" class="footer-link home-text107 thq-link thq-body-small" >About Us</a>
                   <a href="Contact.html" class="footer-link home-text107 thq-link thq-body-small">Contact Us</a>
-                  <a href="index.html#faqs-section" class="footer-link home-text107 thq-link thq-body-small">FAQs</a>
+                  <a href="faqs.html" class="footer-link home-text107 thq-link thq-body-small">FAQs</a>
                   <a href="privacy.html" class="footer-link home-text107 thq-link thq-body-small">Privacy Policy</a>
                   <a href="terms.html" class="footer-link home-text107 thq-link thq-body-small">Terms of Service</a>
                 </div>
