@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a1a;
+            padding: 20px;
+        }
+        
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: #0e1117ff;
+            border: 2px solid #ffffff;
+            border-radius: 30px;
+            padding: 5px;
+            width: 300px;
+        }
+        
+        .toggle-btn {
+            padding: 10px 20px;
+            border: none;
+            background: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 25px;
+            width: 140px;
+            transition: all 0.3s ease;
+        }
+        
+        .active-btn {
+            background-color: #ee6c4d;
+            color: #0e1117ff;
+        }
+        
+        .inactive-btn {
+            background-color: transparent;
+            color: #ffffff;
+        }
+        
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .pricing-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .monthly-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .yearly-section {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .pricing-card {
+            background-color: #0e1117ff;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid #ee6c4d;
+            position: relative;
+        }
+        
+        .pricing-header {
+            margin-bottom: 20px;
+        }
+        
+        .plan-name {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .plan-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        
+        .plan-billing {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+        
+        .features-list {
+            flex-grow: 1;
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .check-icon {
+            min-width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ee6c4d;
+        }
+        
+        .feature-text {
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+        
+        .subscribe-button {
+            background-color: #ee6c4d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .subscribe-button:hover {
+            background-color: #ff7400;
+        }
+        
+        .savings-tag {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background-color: #ee6c4d;
+            color: #0e1117ff;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-container, .monthly-section, .yearly-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <style>
+
+    /* Add this to your existing CSS */
+.savings-tag {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: #ee6c4d;
+    color: #0e1117ff;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    /* Hide by default */
+    display: none;
+}
+
+/* Show only on hover */
+.pricing-card:hover .savings-tag {
+    display: block;
+}
+    </style>
+    <div class="toggle-container">
+        <button id="monthly-btn" class="toggle-btn">Monthly</button>
+        <button id="yearly-btn" class="toggle-btn">Yearly</button>
+    </div>
+    
+    <div class="pricing-container">
+        <div id="monthly-section" class="monthly-section">
+            <!-- Basic Plan (Monthly) -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <p class="plan-name">Basic Plan</p>
+                    <h3 class="plan-price">$9.99/month</h3>
+                </div>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">AI-Powered Document Analysis</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Instant Insights in Multiple Languages</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Secure and Efficient Reviews</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Secure and Efficient Reviews</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Secure and Efficient Reviews</span>
+                    </div>
+                </div>
+                <button class="subscribe-button">Subscribe Now</button>
+            </div>
+
+            <!-- Standard Plan (Monthly) -->
+            <div class="pricing-card featured">
+                <div class="pricing-header">
+                    <p class="plan-name">Standard Plan</p>
+                    <h3 class="plan-price">$19.99/month</h3>
+                </div>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">All Basic Plan Features</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Advanced AI Models for Analysis</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Enhanced Security Measures</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Feature text goes here</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Feature text goes here</span>
+                    </div>
+                </div>
+                <button class="subscribe-button">Subscribe Now</button>
+            </div>
+
+            <!-- Premium Plan (Monthly) -->
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <p class="plan-name">Premium Plan</p>
+                    <h3 class="plan-price">$29.99/month</h3>
+                </div>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">All Standard Plan Features</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Priority Support</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Customizable Analysis Options</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Feature text goes here</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Feature text goes here</span>
+                    </div>
+                </div>
+                <button class="subscribe-button">Subscribe Now</button>
+            </div>
+        </div>
+
+        <div id="yearly-section" class="yearly-section">
+            <!-- Basic Plan (Yearly) -->
+            <div class="pricing-card">
+                <div class="savings-tag">Save 16%</div>
+                <div class="pricing-header">
+                    <p class="plan-name">Basic Plan</p>
+                    <h3 class="plan-price">$99.99/year</h3>
+                    <p class="plan-billing">$8.33/month, billed annually</p>
+                </div>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">AI-Powered Document Analysis</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Instant Insights in Multiple Languages</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Secure and Efficient Reviews</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Secure and Efficient Reviews</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Secure and Efficient Reviews</span>
+                    </div>
+                </div>
+                <button class="subscribe-button">Subscribe Now</button>
+            </div>
+
+            <!-- Standard Plan (Yearly) -->
+            <div class="pricing-card featured">
+                <div class="savings-tag">Save 16%</div>
+                <div class="pricing-header">
+                    <p class="plan-name">Standard Plan</p>
+                    <h3 class="plan-price">$199.99/year</h3>
+                    <p class="plan-billing">$16.67/month, billed annually</p>
+                </div>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">All Basic Plan Features</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Advanced AI Models for Analysis</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Enhanced Security Measures</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Feature text goes here</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Feature text goes here</span>
+                    </div>
+                </div>
+                <button class="subscribe-button">Subscribe Now</button>
+            </div>
+
+            <!-- Premium Plan (Yearly) -->
+            <div class="pricing-card">
+                <div class="savings-tag">Save 16%</div>
+                <div class="pricing-header">
+                    <p class="plan-name">Premium Plan</p>
+                    <h3 class="plan-price">$299.99/year</h3>
+                    <p class="plan-billing">$25.00/month, billed annually</p>
+                </div>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">All Standard Plan Features</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Priority Support</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Customizable Analysis Options</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Feature text goes here</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                            </svg>
+                        </div>
+                        <span class="feature-text">Feature text goes here</span>
+                    </div>
+                </div>
+                <button class="subscribe-button">Subscribe Now</button>
+            </div>
+        </div>
+    </div>
+<script>// JavaScript approach - assuming you have a function that runs when buttons are clicked
+    function handleYearlyButtonClick(event) {
+      // Your existing click handler logic
+      
+      // Remove the part that shows the "save 16%" text
+      const savingsElement = event.target.closest('.pricing-card').querySelector('.savings-text');
+      if (savingsElement) {
+        savingsElement.style.display = 'none';
+      }
+    }
+    
+    // Make sure your hover effects still work separately
+    function handleYearlyButtonHover(event) {
+      const savingsElement = event.target.closest('.pricing-card').querySelector('.savings-text');
+      if (savingsElement) {
+        savingsElement.style.display = 'block';
+      }
+    }
+    
+    function handleYearlyButtonLeave(event) {
+      const savingsElement = event.target.closest('.pricing-card').querySelector('.savings-text');
+      if (savingsElement) {
+        savingsElement.style.display = 'none';
+      }
+    }</script>
+    <script>
+        // Get references to the buttons
+        const monthlyBtn = document.getElementById('monthly-btn');
+        const yearlyBtn = document.getElementById('yearly-btn');
+        
+        // Get references to the sections
+        const monthlySection = document.getElementById('monthly-section');
+        const yearlySection = document.getElementById('yearly-section');
+        
+        // Set default active button
+        monthlyBtn.classList.add('active-btn');
+        monthlyBtn.classList.remove('inactive-btn');
+        yearlyBtn.classList.add('inactive-btn');
+        yearlyBtn.classList.remove('active-btn');
+        
+        // Show monthly section by default
+        monthlySection.style.display = 'flex';
+        yearlySection.style.display = 'none';
+        
+        // Add event listeners for both buttons
+        monthlyBtn.addEventListener('click', function () {
+            // Swap classes
+            monthlyBtn.classList.add('active-btn');
+            monthlyBtn.classList.remove('inactive-btn');
+            yearlyBtn.classList.add('inactive-btn');
+            yearlyBtn.classList.remove('active-btn');
+            
+            // Show monthly section, hide yearly section
+            monthlySection.style.display = 'flex';
+            yearlySection.style.display = 'none';
+        });
+        
+        yearlyBtn.addEventListener('click', function () {
+            // Swap classes
+            yearlyBtn.classList.add('active-btn');
+            yearlyBtn.classList.remove('inactive-btn');
+            monthlyBtn.classList.add('inactive-btn');
+            monthlyBtn.classList.remove('active-btn');
+            
+            // Show yearly section, hide monthly section
+            monthlySection.style.display = 'none';
+            yearlySection.style.display = 'flex';
+        });
+    </script>
+</body>
+</html>

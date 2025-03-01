@@ -118,7 +118,7 @@
                   >
                     <span class="thq-body-small">
                       <fragment class="home-fragment101">
-                        <span class="home-text101">Get Started</span>
+                        <span class="home-text101">Github</span>
                       </fragment>
                     </span>
                   </button>
@@ -157,37 +157,55 @@
                     </div>
                   </div>
                   <nav class="navbar8-links2">
-                    <a href="https://www.teleporthq.io">
+                    <a href="index.html">
                       <fragment class="home-fragment104">
                         <span class="home-text104 thq-link thq-body-small">
-                          #home
+                          Home
                         </span>
                       </fragment>
                     </a>
-                    <a href="https://www.teleporthq.io">
+<!-- Home
+About
+AI Models
+Pricing
+Contact Us -->
+                    <a href="index.html#about-section">
                       <fragment class="home-fragment102">
                         <span class="home-text102 thq-link thq-body-small">
-                          #upload-pdf
+                          About
                         </span>
                       </fragment>
                     </a>
-                    <a href="https://www.teleporthq.io">
+                    <a href="index.html#ai-models-section">
                       <fragment class="home-fragment110">
                         <span class="home-text110 thq-link thq-body-small">
-                          #select-ai-model
+                          AI Models
                         </span>
+                      </fragment>
+                    </a>
+                    <a href="index.html#pricing-section">
+                      <fragment class="home-fragment110">
+                        <span class="home-text110 thq-link thq-body-small">
+                          Pricing
+                        </span>
+                      </fragment>
+                    </a>
+                    <a href="Contact.html">
+                      <fragment class="home-fragment110">
+                        <span class="home-text110 thq-link thq-body-small">
+Contact Us                        </span>
                       </fragment>
                     </a>
                     <div class="navbar8-link4-accordion">
                       <div class="navbar8-trigger">
-                        <span>
+                        <!-- <span>
                           <fragment class="home-fragment107">
                             <span class="home-text107 thq-link thq-body-small">
-                              #chat-for-insights
+                              Pricing
                             </span>
                           </fragment>
-                        </span>
-                        <div class="navbar8-icon-container2">
+                        </span> -->
+                        <!-- <div class="navbar8-icon-container2">
                           <div class="navbar8-container4">
                             <svg viewBox="0 0 1024 1024" class="navbar8-icon18">
                               <path d="M298 426h428l-214 214z"></path>
@@ -198,9 +216,9 @@
                               <path d="M426 726v-428l214 214z"></path>
                             </svg>
                           </div>
-                        </div>
+                        </div> -->
                       </div>
-                      <div class="navbar8-container6">
+                      <!-- <div class="navbar8-container6">
                         <a href="https://www.teleporthq.io">
                           <div class="navbar8-menu-item1">
                             <img
@@ -302,14 +320,14 @@
                             </div>
                           </div>
                         </a>
-                      </div>
+                      </div> -->
                     </div>
                   </nav>
                   <div class="navbar8-buttons2">
                     <button class="thq-button-filled">
                       <span>
                         <fragment class="home-fragment101">
-                          <span class="home-text101">Get Started</span>
+                          <span class="home-text101">Github</span>
                         </fragment>
                       </span>
                     </button>
@@ -583,6 +601,225 @@
         }
         
       </style>
+      <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a1a;
+            padding: 20px;
+        }
+        
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: #0e1117ff;
+            border: 2px solid #ffffff;
+            border-radius: 30px;
+            padding: 5px;
+            width: 300px;
+        }
+        
+        .toggle-btn {
+            padding: 10px 20px;
+            border: none;
+            background: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 25px;
+            width: 140px;
+            transition: all 0.3s ease;
+        }
+        
+        .active-btn {
+            background-color: #ee6c4d;
+            color: #0e1117ff;
+        }
+        
+        .inactive-btn {
+            background-color: transparent;
+            color: #ffffff;
+        }
+        
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .pricing-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .monthly-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .yearly-section {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .pricing-card {
+            background-color: #0e1117ff;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.featured {
+            border: 2px solid #ee6c4d;
+            position: relative;
+        }
+        
+        .pricing-header {
+            margin-bottom: 20px;
+        }
+        
+        .plan-name {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .plan-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        
+        .plan-billing {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+        
+        .features-list {
+            flex-grow: 1;
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .check-icon {
+            min-width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ee6c4d;
+        }
+        
+        .feature-text {
+            font-size: 14px;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+        
+        .subscribe-button {
+            background-color: #ee6c4d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .subscribe-button:hover {
+            background-color: #ff7400;
+        }
+        
+        .savings-tag1 {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background-color: #ee6c4d;
+            color: #0e1117ff;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-container, .monthly-section, .yearly-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+        .thq-button-animated:hover{
+          color: #b48888ff;
+        }
+        .savings-tag {
+          position: absolute;
+          top: -12px;
+          right: 20px;
+          background-color: #ee6c4d;
+          color: #0e1117ff;
+          font-weight: bold;
+          font-size: 12px;
+          padding: 5px 10px;
+          border-radius: 15px;
+          /* Hide by default */
+          display: none;
+      }
+      
+      /* Show only on hover */
+      .pricing-card:hover .savings-tag {
+          display: block;
+      }
+    </style>
       <pricing14-wrapper class="pricing14-wrapper">
         <!--Pricing14 component-->
         <div id="pricing-section" class="pricing14-pricing23 thq-section-padding">
@@ -616,715 +853,377 @@
                 </p>
               </div>
             </div>
-            <div class="pricing14-tabs">
-              <button id="monthly-btn"
-                class="pricing14-button10 thq-button-animated thq-button-filled"
-              >
-                <span class="thq-body-small">Monthly</span>
-              </button>
+            <div class="toggle-container">
+              <button id="monthly-btn" class="toggle-btn thq-button-animated">Monthly</button>
+              <button id="yearly-btn" class="toggle-btn thq-button-animated">Yearly</button>
+          </div>
           
-              <button id="yearly-btn"
-                class="pricing14-button13 thq-button-outline thq-button-animated"
-              >
-                <span class="thq-body-small">Yearly</span>
-              </button>
-            </div>
-            <div class="pricing14-container1">
-              <div class="pricing14-column1 thq-card">
-                <div class="pricing14-price10">
-                  <div class="pricing14-price11">
-                    <p>
-                      <fragment class="home-fragment156">
-                        <span class="home-text160 thq-body-large">
-                          Basic Plan
-                        </span>
-                      </fragment>
-                    </p>
-                    <h3>
-                      <fragment class="home-fragment178">
-                        <span class="home-text184 thq-heading-3">
-                          $9.99/month
-                        </span>
-                      </fragment>
-                    </h3>
-                    <p>
-                      <fragment class="home-fragment173">
-                        <span class="home-text177 thq-body-large">
-                          $99.99/year
-                        </span>
-                      </fragment>
-                    </p>
+          <div class="pricing-container">
+              <div id="monthly-section" class="monthly-section">
+                  <!-- Basic Plan (Monthly) -->
+                  <div class="pricing-card">
+                      <div class="pricing-header">
+                          <p class="plan-name">Basic Plan</p>
+                          <h3 class="plan-price">$9.99/month</h3>
+                      </div>
+                      <div class="features-list">
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">AI-Powered Document Analysis</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Instant Insights in Multiple Languages</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Secure and Efficient Reviews</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Secure and Efficient Reviews</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Secure and Efficient Reviews</span>
+                          </div>
+                      </div>
+                      <button class="subscribe-button">Subscribe Now</button>
                   </div>
-                  <div class="pricing14-list1">
-                    <div class="pricing14-list-item10">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment174">
-                          <span class="home-text178 thq-body-small">
-                            AI-Powered Document Analysis
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item11">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment135">
-                          <span class="home-text139 thq-body-small">
-                            Instant Insights in Multiple Languages
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item12">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment172">
-                          <span class="home-text176 thq-body-small">
-                            Secure and Efficient Reviews
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item12">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment172">
-                          <span class="home-text176 thq-body-small">
-                            Secure and Efficient Reviews
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item12">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment172">
-                          <span class="home-text176 thq-body-small">
-                            Secure and Efficient Reviews
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
+      
+                  <!-- Standard Plan (Monthly) -->
+                  <div class="pricing-card featured">
+                      <div class="pricing-header">
+                          <p class="plan-name">Standard Plan</p>
+                          <h3 class="plan-price">$19.99/month</h3>
+                      </div>
+                      <div class="features-list">
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">All Basic Plan Features</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Advanced AI Models for Analysis</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Enhanced Security Measures</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Feature text goes here</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Feature text goes here</span>
+                          </div>
+                      </div>
+                      <button class="subscribe-button">Subscribe Now</button>
                   </div>
-                </div>
-                <button
-                  class="pricing14-button14 thq-button-outline thq-button-animated"
-                >
-                  <span>
-                    <fragment class="home-fragment132">
-                      <span class="home-text136 thq-body-small">
-                        Subscribe Now
-                      </span>
-                    </fragment>
-                  </span>
-                </button>
+      
+                  <!-- Premium Plan (Monthly) -->
+                  <div class="pricing-card">
+                      <div class="pricing-header">
+                          <p class="plan-name">Premium Plan</p>
+                          <h3 class="plan-price">$29.99/month</h3>
+                      </div>
+                      <div class="features-list">
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">All Standard Plan Features</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Priority Support</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Customizable Analysis Options</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Feature text goes here</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Feature text goes here</span>
+                          </div>
+                      </div>
+                      <button class="subscribe-button">Subscribe Now</button>
+                  </div>
               </div>
-              <div class="pricing14-column2 thq-card">
-                <div class="pricing14-price12">
-                  <div class="pricing14-price13">
-                    <p>
-                      <fragment class="home-fragment148">
-                        <span class="home-text152 thq-body-large">
-                          Standard Plan
-                        </span>
-                      </fragment>
-                    </p>
-                    <h3>
-                      <fragment class="home-fragment162">
-                        <span class="home-text166 thq-heading-3">
-                          $19.99/month
-                        </span>
-                      </fragment>
-                    </h3>
-                    <p>
-                      <fragment class="home-fragment142">
-                        <span class="home-text146 thq-body-large">
-                          $199.99/year
-                        </span>
-                      </fragment>
-                    </p>
+      
+              <div id="yearly-section" class="yearly-section">
+                  <!-- Basic Plan (Yearly) -->
+                  <div class="pricing-card">
+                      <div class="savings-tag1">Save 16%</div>
+                      <div class="pricing-header">
+                          <p class="plan-name">Basic Plan</p>
+                          <h3 class="plan-price">$99.99/year</h3>
+                          <p class="plan-billing">$8.33/month, billed annually</p>
+                      </div>
+                      <div class="features-list">
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">AI-Powered Document Analysis</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Instant Insights in Multiple Languages</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Secure and Efficient Reviews</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Secure and Efficient Reviews</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Secure and Efficient Reviews</span>
+                          </div>
+                      </div>
+                      <button class="subscribe-button">Subscribe Now</button>
                   </div>
-                  <div class="pricing14-list2">
-                    <div class="pricing14-list-item13">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment153">
-                          <span class="home-text157 thq-body-small">
-                            All Basic Plan Features
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item14">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment139">
-                          <span class="home-text143 thq-body-small">
-                            Advanced AI Models for Analysis
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item15">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment146">
-                          <span class="home-text150 thq-body-small">
-                            Enhanced Security Measures
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item16">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment141">
-                          <span class="home-text145 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item16">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment141">
-                          <span class="home-text145 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
+      
+                  <!-- Standard Plan (Yearly) -->
+                  <div class="pricing-card featured">
+                      <div class="savings-tag1">Save 16%</div>
+                      <div class="pricing-header">
+                          <p class="plan-name">Standard Plan</p>
+                          <h3 class="plan-price">$199.99/year</h3>
+                          <p class="plan-billing">$16.67/month, billed annually</p>
+                      </div>
+                      <div class="features-list">
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">All Basic Plan Features</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Advanced AI Models for Analysis</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Enhanced Security Measures</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Feature text goes here</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Feature text goes here</span>
+                          </div>
+                      </div>
+                      <button class="subscribe-button">Subscribe Now</button>
                   </div>
-                </div>
-                <button
-                  class="pricing14-button15 thq-button-animated thq-button-filled"
-                >
-                  <span>
-                    <fragment class="home-fragment144">
-                      <span class="home-text148 thq-body-small">
-                        Subscribe Now
-                      </span>
-                    </fragment>
-                  </span>
-                </button>
+      
+                  <!-- Premium Plan (Yearly) -->
+                  <div class="pricing-card">
+                      <div class="savings-tag1">Save 16%</div>
+                      <div class="pricing-header">
+                          <p class="plan-name">Premium Plan</p>
+                          <h3 class="plan-price">$299.99/year</h3>
+                          <p class="plan-billing">$25.00/month, billed annually</p>
+                      </div>
+                      <div class="features-list">
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">All Standard Plan Features</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Priority Support</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Customizable Analysis Options</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Feature text goes here</span>
+                          </div>
+                          <div class="feature-item">
+                              <div class="check-icon">
+                                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                                  </svg>
+                              </div>
+                              <span class="feature-text">Feature text goes here</span>
+                          </div>
+                      </div>
+                      <button class="subscribe-button">Subscribe Now</button>
+                  </div>
               </div>
-              <div class="pricing14-column3 thq-card">
-                <div class="pricing14-price14">
-                  <div class="pricing14-price15">
-                    <p>
-                      <fragment class="home-fragment179">
-                        <span class="home-text185 thq-body-large">
-                          Premium Plan
-                        </span>
-                      </fragment>
-                    </p>
-                    <h3>
-                      <fragment class="home-fragment129">
-                        <span class="home-text133 thq-heading-3">
-                          $29.99/month
-                        </span>
-                      </fragment>
-                    </h3>
-                    <p>
-                      <fragment class="home-fragment168">
-                        <span class="home-text172 thq-body-large">
-                          $299.99/year
-                        </span>
-                      </fragment>
-                    </p>
-                  </div>
-                  <div class="pricing14-list3">
-                    <div class="pricing14-list-item17">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment145">
-                          <span class="home-text149 thq-body-small">
-                            All Standard Plan Features
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item18">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment151">
-                          <span class="home-text155 thq-body-small">
-                            Priority Support
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item19">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment175">
-                          <span class="home-text179 thq-body-small">
-                            Customizable Analysis Options
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                
-                    <div class="pricing14-list-item21">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment160">
-                          <span class="home-text164 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item21">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment160">
-                          <span class="home-text164 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <button
-                  class="pricing14-button16 thq-button-animated thq-button-filled"
-                >
-                  <span>
-                    <fragment class="home-fragment130">
-                      <span class="home-text134 thq-body-small">
-                        Subscribe Now
-                      </span>
-                    </fragment>
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div class="pricing14-container2">
-              <div class="pricing14-column4 thq-card">
-                <div class="pricing14-price16">
-                  <div class="pricing14-price17">
-                    <span>
-                      <fragment class="home-fragment131">
-                        <span class="home-text135 thq-body-large">
-                          Basic plan
-                        </span>
-                      </fragment>
-                    </span>
-                    <h3>
-                      <fragment class="home-fragment147">
-                        <span class="home-text151 thq-heading-3">
-                          $200/yr
-                        </span>
-                      </fragment>
-                    </h3>
-                    <span>
-                      <fragment class="home-fragment166">
-                        <span class="home-text170 thq-body-large">
-                          or $20 monthly
-                        </span>
-                      </fragment>
-                    </span>
-                  </div>
-                  <div class="pricing14-list4">
-                    <div class="pricing14-list-item22">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment158">
-                          <span class="home-text162 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item22">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment158">
-                          <span class="home-text162 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item23">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment159">
-                          <span class="home-text163 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item24">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment171">
-                          <span class="home-text175 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div> <div class="pricing14-list-item24">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment171">
-                          <span class="home-text175 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <button
-                  class="pricing14-button17 thq-button-outline thq-button-animated"
-                >
-                  <span>
-                    <fragment class="home-fragment143">
-                      <span class="home-text147 thq-body-small">
-                        Get started
-                      </span>
-                    </fragment>
-                  </span>
-                </button>
-              </div>
-              <div class="pricing14-column5 thq-card">
-                <div class="pricing14-price18">
-                  <div class="pricing14-price19">
-                    <span>
-                      <fragment class="home-fragment157">
-                        <span class="home-text161 thq-body-large">
-                          Business plan
-                        </span>
-                      </fragment>
-                    </span>
-                    <h3>
-                      <fragment class="home-fragment167">
-                        <span class="home-text171 thq-heading-3">
-                          $299/yr
-                        </span>
-                      </fragment>
-                    </h3>
-                    <span>
-                      <fragment class="home-fragment161">
-                        <span class="home-text165 thq-body-large">
-                          or $29 monthly
-                        </span>
-                      </fragment>
-                    </span>
-                  </div>
+          </div>
+      
+          <script>
+              // Get references to the buttons
+              const monthlyBtn = document.getElementById('monthly-btn');
+              const yearlyBtn = document.getElementById('yearly-btn');
+              
+              // Get references to the sections
+              const monthlySection = document.getElementById('monthly-section');
+              const yearlySection = document.getElementById('yearly-section');
+              
+              // Set default active button
+              monthlyBtn.classList.add('active-btn');
+              monthlyBtn.classList.remove('inactive-btn');
+              yearlyBtn.classList.add('inactive-btn');
+              yearlyBtn.classList.remove('active-btn');
+              
+              // Show monthly section by default
+              monthlySection.style.display = 'flex';
+              yearlySection.style.display = 'none';
+              
+              // Add event listeners for both buttons
+              monthlyBtn.addEventListener('click', function () {
+                  // Swap classes
+                  monthlyBtn.classList.add('active-btn');
+                  monthlyBtn.classList.remove('inactive-btn');
+                  yearlyBtn.classList.add('inactive-btn');
+                  yearlyBtn.classList.remove('active-btn');
                   
-                  <div class="pricing14-list5">
-                    <div class="pricing14-list-item25">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment136">
-                          <span class="home-text140 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item25">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment136">
-                          <span class="home-text140 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item26">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment149">
-                          <span class="home-text153 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item27">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment164">
-                          <span class="home-text168 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item28">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment138">
-                          <span class="home-text142 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <button
-                  class="pricing14-button18 thq-button-animated thq-button-filled"
-                >
-                  <span>
-                    <fragment class="home-fragment150">
-                      <span class="home-text154 thq-body-small">
-                        Get started
-                      </span>
-                    </fragment>
-                  </span>
-                </button>
-              </div>
-              <div class="pricing14-column6 thq-card">
-                <div class="pricing14-price20">
-                  <div class="pricing14-price21">
-                    <span>
-                      <fragment class="home-fragment133">
-                        <span class="home-text137 thq-body-large">
-                          Enterprise plan
-                        </span>
-                      </fragment>
-                    </span>
-                    <h3>
-                      <fragment class="home-fragment170">
-                        <span class="home-text174 thq-heading-3">
-                          $499/yr
-                        </span>
-                      </fragment>
-                    </h3>
-                    <span>
-                      <fragment class="home-fragment163">
-                        <span class="home-text167 thq-body-large">
-                          or $49 monthly
-                        </span>
-                      </fragment>
-                    </span>
-                  </div>
-                  <div class="pricing14-list6">
-                    <div class="pricing14-list-item29">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment165">
-                          <span class="home-text169 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item30">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment140">
-                          <span class="home-text144 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item31">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment155">
-                          <span class="home-text159 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item32">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment134">
-                          <span class="home-text138 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                    <div class="pricing14-list-item33">
-                      <svg viewBox="0 0 1024 1024" class="thq-icon-small">
-                        <path
-                          d="M384 690l452-452 60 60-512 512-238-238 60-60z"
-                        ></path>
-                      </svg>
-                      <span>
-                        <fragment class="home-fragment137">
-                          <span class="home-text141 thq-body-small">
-                            Feature text goes here
-                          </span>
-                        </fragment>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <button
-                  class="pricing14-button19 thq-button-animated thq-button-filled"
-                >
-                  <span>
-                    <fragment class="home-fragment177">
-                      <span class="home-text183 thq-body-small">
-                        Get started
-                      </span>
-                    </fragment>
-                  </span>
-                </button> 
-              </div>
-            </div>
+                  // Show monthly section, hide yearly section
+                  monthlySection.style.display = 'flex';
+                  yearlySection.style.display = 'none';
+              });
+              
+              yearlyBtn.addEventListener('click', function () {
+                  // Swap classes
+                  yearlyBtn.classList.add('active-btn');
+                  yearlyBtn.classList.remove('inactive-btn');
+                  monthlyBtn.classList.add('inactive-btn');
+                  monthlyBtn.classList.remove('active-btn');
+                  
+                  // Show yearly section, hide monthly section
+                  monthlySection.style.display = 'none';
+                  yearlySection.style.display = 'flex';
+              });
+          </script>
           </div>
         </div>
       </pricing14-wrapper>
-<script>
-  // Get references to the buttons
-  const monthlyBtn = document.getElementById('monthly-btn');
-  const yearlyBtn = document.getElementById('yearly-btn');
-  
-  // Set default active button
-  monthlyBtn.classList.add('active-btn');
-  yearlyBtn.classList.add('inactive-btn');
-  
-  // Add event listeners for both buttons
-  monthlyBtn.addEventListener('click', function () {
-      // Swap classes
-      monthlyBtn.classList.add('active-btn');
-      monthlyBtn.classList.remove('inactive-btn');
-      yearlyBtn.classList.add('inactive-btn');
-      yearlyBtn.classList.remove('active-btn');
-  });
-  
-  yearlyBtn.addEventListener('click', function () {
-      // Swap classes
-      yearlyBtn.classList.add('active-btn');
-      yearlyBtn.classList.remove('inactive-btn');
-      monthlyBtn.classList.add('inactive-btn');
-      monthlyBtn.classList.remove('active-btn');
-  });
-  
-  
-</script>
+
 
       <div id="ai-models-section">
         <steps2-wrapper class="steps2-wrapper" >
