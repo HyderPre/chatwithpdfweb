@@ -1,0 +1,82 @@
+/* Apply Website Theme */
+body, body.bootstrap-override {
+  color: #1E293B;  /* Dark text color */
+  background: #dbeafe !important; /* Matches index.html background */
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* FAQ Container */
+.faq-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white; /* Same as index.html */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* FAQ Title */
+.faq-container h2 {
+  font-size: 26px;
+  color: #1E40AF; /* Matches Navbar & Buttons */
+  margin-bottom: 20px;
+}
+
+/* FAQ Item */
+.faq-item {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Question Styling */
+.faq-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  padding: 12px;
+  background: #2563EB; /* Matches index.html buttons */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect for Questions */
+.faq-item h3:hover {
+  background: #1E40AF; /* Slightly darker for effect */
+}
+
+/* Answer Styling */
+.faq-item p {
+  font-size: 16px;
+  display: none;
+  padding: 12px;
+  background: #F1F5F9; /* Light Gray background for contrast */
+  border-left: 4px solid #2563EB;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+/* Show Answer When Active */
+.faq-item.active p {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation for Answer */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .faq-container {
+      width: 90%;
+      padding: 15px;
+  }
+}
