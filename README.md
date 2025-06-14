@@ -43,15 +43,23 @@ cd chatwithpdfweb
 ```pgsql
 chatwithpdfweb/
 │
-├── assets/
-│   ├── chatwithpdf-high-resolution-logo.png
-│   └── favicon.png
-│
-├── index.html
-├── preview.png
-├── README.md
-├── script.js
-└── style.css
+├── .vscode/                     # VS Code settings
+├── components/                 # Reusable HTML components or layout sections
+├── css/                        # Stylesheets
+├── db/                         # Database-related files (config or connection scripts)
+├── img/                        # Images and visual assets
+├── js/                         # JavaScript files for frontend behavior
+├── php/                        # PHP backend scripts (e.g., form handling)
+├── 404.html                    # Custom 404 error page
+├── Contact.html                # Contact Us page
+├── cookies.html                # Cookie policy page
+├── FAQs.html                   # Frequently Asked Questions page
+├── index.html                  # Main landing page
+├── privacy.html                # Privacy policy page
+├── terms.html                  # Terms and conditions page
+├── LICENSE                     # License file
+└── README.md                   # Project documentation 
+
 ```
 
 ## 🧠 Future Improvements
@@ -64,7 +72,16 @@ Dark mode toggle
 Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
 
 ## 📄 License
-MIT License.
-See the LICENSE file for more information.
 
-### Created by HyderPre 💡
+You **must obtain written permission** before copying, reusing, modifying, or distributing any part of this project for personal, academic, or commercial purposes.
+
+📧 Contact the authors:  
+- **Hyder Presswala** – hyder.p@somaiya.edu  
+- **Hamza Kapasi** – hamza.kapasi@somaiya.edu
+
+⚠️ Unauthorized use is strictly prohibited.
+
+
+## #️⃣ Hashtags for SEO
+#ChatWithPDFWebsite #ChatWithPDF #PDFChatbot #PDFtoText #ChatWithDocs #SmartPDF #InteractivePDF #PDFReaderBot #DocumentAI #ArtificialIntelligence #AIChatbot #AIAssistant #AIPowered #AIModel #AIDocumentReader #AIAutomation #NLP #NaturalLanguageProcessing #OpenAI #MachineLearning #DeepLearning #AIStartup #AIInnovation #AITools #AIProject #AIApp #PromptEngineering #GenAI #AIAgent #ConversationalAI #ChatbotTechnology #WebDevelopment #FrontendDevelopment #JavaScriptProject #HTML #CSS #ResponsiveDesign #WebApp #StaticWebsite #JS #HTML5 #CSS3 #FrontendUI #UIDesign #WebInterface #CleanUI #LandingPage #UIUX #UXDesign #WebDesign #CreativeDesign #FrontendTools #JSApp #WebsiteLaunch #PHP #FormHandler #DatabaseIntegration #ContactForm #APIBased #FullStackProject #WebHosting #DomainSetup #StaticHosting #WebDeployment #Firebase #InfinityFree #XAMPP #OpenSource #OpenSourceProject #GitHubRepo #CodeNewbie #DevCommunity #GitHubProjects #FreeToUse #DeveloperTools #BuiltInPublic #ForkIt #HackathonProject #CodeSharing #DevTools #TechStartup #ProductLaunch #StartupTool #SaaS #NoCode #LowCode #TechTools #ProductivityTools #FoundersBuild #StartupLife #BuildInPublic #TechProduct #LeanStartup #StartupIdeas #TechInnovation #Developer #WebDeveloper #CodeLife #TechCommunity #CodingLife #DevLife #WomenWhoCode #JavaScriptDevelopers #FullStackDev #CodeWithMe #BuildWithAI #CodersOfIndia #DevInspiration #TechSEO #SearchOptimization #DigitalPresence #GoogleSearch #TechDiscovery #OnlineTools #WebTools #BestWebApps #ExploreTools #SearchRank #WebUtility #UsefulWebApps #CustomDomain #FreeHosting #ZoneID #DeployWebsite #WebsiteOnline #WebAppLaunch #DomainMapping #StaticWebDeployment #GitHubPages #InfinityFreeHosting #WebAppURL #LearnToCode #CodingProject #StudentProject #AcademicProject #MCAProject #CollegeProject #FinalYearProject #CSStudents #WebProject #MiniProject #SimpleProjects #HTMLCSSProject #PDFTools #ReadPDF #UploadPDF #ChatWithFiles #DocReader #FileBot #PDFSupport #AIForDocs #SummarizePDF #TextFromPDF #AskYourPDF #AIHelper #PDFUploader #LiveDemo #WebPreview #SiteLaunch #LandingPageDesign #WebShowcase #UIdemo #WebAppDesign #PreviewNow #NewWebsite #TechShowcase #GitHubPagesDemo
+
