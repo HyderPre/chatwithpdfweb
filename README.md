@@ -23,7 +23,7 @@ A simple and user-friendly web application that allows users to **upload PDF doc
 ## 🖥️ Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript
-- **Hosting**: [InfinityFree](https://infinityfree.net/) / Custom Domain (`zone.id` supported)
+- **Hosting**: [InfinityFree](https://infinityfree.net/) 
 
 ## 🌐 Live Demo
 
